@@ -91,4 +91,35 @@ toString() {
 let Book = new AddressBook("Shubham","Gawali","Panchavati","Nashik","Maharashtra","422003","+91 7218645332","shubhamgawali7745@gmail.com");
 console.log(Book.toString());
 
- 
+// UC3: New Address Book array and add new Contacts to 
+
+let NewAddressBook = new Array();
+NewAddressBook.push(Book)
+
+const Contact1 = new AddressBook("Ten","Duk","Shimla","Himachal","Himachalpradesh","422101","+91 7387557696","ten@gmail.com");
+NewAddressBook.push(Contact1);
+
+const Contact2 = new AddressBook("Aman","Raj","Newarea","Dehri","Bihar","821305","+91 7759953073","amanraj1906@gmail.com");
+NewAddressBook.push(Contact2);
+
+const Contact3 = new AddressBook("Jyotirmaya","Majhi","Ashoknagar","Ranchi","Jharkhand","834001","+91 7569843125","Jyotirmaya@gmail.com");
+NewAddressBook.push(Contact3);
+
+//console.log(contactArray.toString());
+
+for (let i = 0; i < NewAddressBook.length; i++) {
+    const element = NewAddressBook[i];
+   console.log(element.toString()); 
+}
+
+//UC 4: Editing Contact
+
+let result = NewAddressBook.filter((e) => e.firstname == "Ten");
+    console.log("result : "+result);
+
+    if (result && result.length > 0) {
+        result[0].firstname = 'Rahul';
+        result[0].address = 'Deolali';
+    }
+
+    console.log("New Array after Updation: " + NewAddressBook);
