@@ -17,7 +17,7 @@ class AddressBook {
 
 get firstname() { return this._firstname; }
 set firstname(firstname) {
-    let pattern1 = RegExp('^[A-Z]{1}[a-z]{3,}$');
+    let pattern1 = RegExp('^[A-Z]{1}[a-z]{2,}$');
     if (pattern1.test(firstname))
         this._firstname = firstname;
     else console.log('FirstName is Incorrect!');
@@ -26,7 +26,7 @@ set firstname(firstname) {
 
 get lastname() { return this._lastname; }
 set lastname(lastname) {
-    let pattern2 = RegExp('^[A-Z]{1}[a-z]{3,}$');
+    let pattern2 = RegExp('^[A-Z]{1}[a-z]{2,}$');
     if (pattern2.test(lastname))
         this._lastname = lastname;
     else console.log('LastName is Incorrect!');
@@ -50,7 +50,7 @@ set city(city) {
 
 get state() { return this._state; }
 set state(state) {
-    let pattern5 = RegExp('^[A-Z]{1}[a-z]{4,}$');
+    let pattern5 = RegExp('^[A-Z]{1}[a-z]{2,}$');
     if (pattern5.test(state))
         this._state = state;
     else console.log('State is Incorrect!');
@@ -90,3 +90,32 @@ toString() {
 
 let Book = new AddressBook("Shubham","Gawali","Panchavati","Nashik","Maharashtra","422003","+91 7218645332","shubhamgawali7745@gmail.com");
 console.log(Book.toString());
+
+ // UC3: New Address Book array and add new Contacts to 
+
+ let NewAddressBook = new Array();
+ NewAddressBook.push(Book)
+
+ const Contact1 = new AddressBook("Ten","Duk","Shimla","Himachal","Himachalpradesh","422101","+91 7387557696","ten@gmail.com");
+ NewAddressBook.push(Contact1);
+
+ const Contact2 = new AddressBook("Aman","Raj","Newarea","Dehri","Bihar","821305","+91 7759953073","amanraj1906@gmail.com");
+ NewAddressBook.push(Contact2);
+
+ const Contact3 = new AddressBook("Jyotirmaya","Majhi","Ashoknagar","Ranchi","Jharkhand","834001","+91 7569843125","Jyotirmaya@gmail.com");
+ NewAddressBook.push(Contact3);
+
+ //console.log(contactArray.toString());
+
+ for (let i = 0; i < NewAddressBook.length; i++) {
+     const element = NewAddressBook[i];
+    console.log(element.toString()); 
+ }
+
+ //UC 4: Editing Contact
+
+ let result = NewAddressBook.filter()
+
+// function EditContact(AddressBook) {
+//     console.log("");
+// }
