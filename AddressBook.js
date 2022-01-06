@@ -105,6 +105,9 @@ NewAddressBook.push(Contact2);
 const Contact3 = new AddressBook("Jyotirmaya","Majhi","Ashoknagar","Ranchi","Jharkhand","834001","+91 7569843125","Jyotirmaya@gmail.com");
 NewAddressBook.push(Contact3);
 
+const Contact4 = new AddressBook("Vedant","Patil","Mumbai","Mumbai","Maharashtra","422104","+91 7387597686","ved@gmail.com");
+NewAddressBook.push(Contact4); 
+
 //console.log(contactArray.toString());
 
 for (let i = 0; i < NewAddressBook.length; i++) {
@@ -123,3 +126,14 @@ let result = NewAddressBook.filter((e) => e.firstname == "Ten");
     }
 
     console.log("New Array after Updation: " + NewAddressBook);
+
+
+// UC5 Ability to find a person with name and delete it from the array
+
+
+// NewAddressBook = NewAddressBook.filter((e) => e.firstname != "Vedant");
+// console.log("New Array After Delete: " + NewAddressBook);
+
+NewBook = NewAddressBook.findIndex((e) => e.firstname == "Vedant");
+NewAddressBook.pop(NewBook);
+console.log("New Array After Delete: " + NewAddressBook);
