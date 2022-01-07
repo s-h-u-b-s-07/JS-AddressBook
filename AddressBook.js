@@ -74,7 +74,7 @@ set phoneNumber(phoneNumber) {
 
 get emailId() { return this._emailId; }
 set emailId(emailId) {
-    let pattern8 = RegExp('^[A-Z a-z 0-9]+([._+-][0-9 a-z A-Z]+)*@[0-9 a-z A-Z]+.[a-z A-Z]{2,3}([.][a-z A-Z]{2})*$');
+    let pattern8 = RegExp('^[0-9a-zA-Z+-.]+@[-+.0-9a-zA-Z]*.[a-zA-Z]{2,3}.([a-zA-z]{2,3})$');
     if (pattern8.test(emailId))
         this._emailId = emailId;
     else console.log('EmailId is Incorrect!');
@@ -131,9 +131,11 @@ let result = NewAddressBook.filter((e) => e.firstname == "Ten");
 // UC5 Ability to find a person with name and delete it from the array
 
 
-// NewAddressBook = NewAddressBook.filter((e) => e.firstname != "Vedant");
-// console.log("New Array After Delete: " + NewAddressBook);
-
 NewBook = NewAddressBook.findIndex((e) => e.firstname == "Vedant");
 NewAddressBook.pop(NewBook);
 console.log("New Array After Delete: " + NewAddressBook);
+
+// UC6 Ability to find number of contacts in the address book
+
+let numOfContacts = NewAddressBook.length;
+console.log("Number of Contacts in the AddressBook: " + numOfContacts);
