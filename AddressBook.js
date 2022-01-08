@@ -157,3 +157,20 @@ console.log("Contact from the addressBook as per Given city: " + checkCity);
 
 let checkState = NewAddressBook.filter((e) => e.state == 'Maharashtra');
 console.log("Contact from the addressBook as per given state: " + checkState);
+
+
+// UC9 Ability to get number of contact persons i.e. count by City or State - Search Result will show count by city and by state
+
+let counter = 0;
+for (let i = 0; i < NewAddressBook.length; i++) {
+if (NewAddressBook[i].city == 'Mumbai')
+    counter++;
+}
+console.log("Number of contacts for the given City in the AddressBook: " + counter);
+
+let counter1 = 0;
+for (let i = 0; i < NewAddressBook.length; i++) {
+if (NewAddressBook[i].state == 'Maharashtra')
+    counter1++;
+}
+console.log("Number of contacts for the given State in the AddressBook: " + counter1);
