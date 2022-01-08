@@ -139,3 +139,13 @@ console.log("New Array After Delete: " + NewAddressBook);
 
 let numOfContacts = NewAddressBook.length;
 console.log("Number of Contacts in the AddressBook: " + numOfContacts);
+
+  // UC7 Ability to ensure there is no Duplicate Entry of the same Person in the Address Book
+
+  const Contact5 = new AddressBook("Vedant","Patil","Mumbai","Mumbai","Maharashtra","422104","+91 7387597686","ved@gmail.com");
+  NewAddressBook.push(Contact5);
+
+  if (!NewAddressBook.some(el => el.firstname == "Vedant"))
+    contactArray.push(Contact5);
+    else
+    console.log("Contact already Exists! Its a Duplicate Entry");
